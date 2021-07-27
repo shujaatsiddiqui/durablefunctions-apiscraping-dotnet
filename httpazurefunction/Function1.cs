@@ -21,7 +21,7 @@ namespace httpazurefunction
     {
         private static Func<string> getToken = () => "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";//Environment.GetEnvironmentVariable("GitHubToken", EnvironmentVariableTarget.Process);
         private static GitHubClient github = new GitHubClient(new ProductHeaderValue("shujaatsiddiqui")) { Credentials = new Credentials(getToken()) };
-        private static CloudStorageAccount account = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=storageaccountaz2048f34;AccountKey=XqKjYjWq3JIeznETGho61tyC0JcJSizV/ezf08vI/03Mlv5fRe5jG3e9nEsBRxDpQHQQgsTNASZ3wJLqa7WKag==;EndpointSuffix=core.windows.net");
+        private static CloudStorageAccount account = CloudStorageAccount.Parse(Environment.GetEnvironmentVariable("AzureWebJobsStorage", EnvironmentVariableTarget.Process));
         //private static ILogger _log;
 
 
